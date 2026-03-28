@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kick Death in the Nuts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Blunt, science-backed playbook for men to add serious years to their life without living like a monk." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kick Death in the Nuts" />
+  <meta property="og:description" content="Blunt, science-backed playbook for men who want more years, more muscle, and more life." />
+  <meta property="og:image" content="https://source.unsplash.com/featured/?man,fitness" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%F0%9F%92%AA" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Anton&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050910;
+      --bg-alt: #07111f;
+      --card: #0c1727;
+      --accent: #2dd4bf;
+      --accent-soft: rgba(45, 212, 191, 0.12);
+      --danger: #f97373;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.25);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: radial-gradient(circle at top, #0b1220 0, #020617 55%, #000 100%);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: transparent;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 16px 80px;
+    }
+
+    @media (min-width: 768px) {
+      .shell {
+        padding: 24px 24px 100px;
+      }
+    }
+
+    /* Sticky Nav / Progress */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      margin: -16px -16px 16px;
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.98), rgba(2, 6, 23, 0.9), transparent);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav-title {
+      font-family: 'Anton', system-ui;
+      letter-spacing: 0.08em;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(45, 212, 191, 0.9);
+    }
+
+    .nav-steps {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .nav-step {
+      width: 12px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.3);
+      transition: background 0.3s, width 0.3s;
+    }
+
+    .nav-step.active {
+      background: var(--accent);
+      width: 18px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+      scroll-margin-top: 60px;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        margin-bottom: 64px;
+      }
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 28px;
+      }
+    }
+
+    /* Hero / Hook */
+    .hero {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+        align-items: stretch;
+      }
+    }
+
+    .hero-main {
+      padding: 18px 16px 20px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 55%),
+        linear-gradient(145deg, #020617, #020617, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 10px;
+    }
+
+    .hero-headline {
+      font-family: 'Anton', system-ui;
+      font-size: 32px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-headline {
+        font-size: 40px;
+      }
+    }
+
+    .hero-highlight {
+      color: var(--accent);
+      text-shadow: 0 0 18px rgba(34, 197, 94, 0.6);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .hero-sub strong {
+      color: #e5e7eb;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #2dd4bf);
+      color: #020617;
+      box-shadow: 0 12px 30px rgba(45, 212, 191, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(34, 197, 94, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .stat-card {
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 8px 10px 9px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .stat-unit {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .stat-tag {
+      font-size: 10px;
+      color: #a5f3fc;
+      margin-top: 4px;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: var(--shadow-soft);
+      min-height: 220px;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 55%), #020617;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.1);
+      transform: scale(1.02);
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-image-badge span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Page 1: Overview Stats Grid */
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: 16px;
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 55%), #020617;
+      border: 1px solid var(--border-soft);
+      padding: 13px 12px 14px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.7);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #a5f3fc;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .card-body strong {
+      color: #e5e7eb;
+    }
+
+    .bar-chart {
+      display: flex;
+      gap: 7px;
+      margin-top: 7px;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #22c55e, #2dd4bf);
+      transform-origin: left;
+      transform: scaleX(0.1);
+      transition: transform 1s ease-out;
+    }
+
+    .bar-num {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Core Breakdown Cards */
+    .h-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tag-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 11px;
+    }
+
+    .one-step {
+      font-size: 13px;
+      margin-top: 6px;
+      color: #e5e7eb;
+    }
+
+    .one-step strong {
+      color: var(--accent);
+    }
+
+    /* Simple Comparison Table */
+    .compare {
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: #020617;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+
+    .compare-row.header {
+      background: rgba(15, 23, 42, 0.95);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .compare-row:nth-child(odd):not(.header) {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .compare-label {
+      color: #e5e7eb;
+    }
+
+    .compare-good {
+      color: var(--accent);
+    }
+
+    .compare-bad {
+      color: var(--danger);
+    }
+
+    /* Collapsibles */
+    .accordion {
+      margin-top: 8px;
+    }
+
+    .accordion-item {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background: #020617;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 9px 11px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .accordion-header span {
+      font-weight: 500;
+    }
+
+    .accordion-header small {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out, padding 0.2s ease-out;
+      padding: 0 11px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .accordion-body.open {
+      padding: 0 11px 10px;
+    }
+
+    .accordion-body p {
+      margin-top: 7px;
+    }
+
+    .accordion-body ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+
+    .accordion-body li {
+      margin-bottom: 3px;
+    }
+
+    .chevron {
+      width: 8px;
+      height: 8px;
+      border-right: 1.5px solid #9ca3af;
+      border-bottom: 1.5px solid #9ca3af;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+      margin-left: 8px;
+    }
+
+    .chevron.open {
+      transform: rotate(-135deg);
+    }
+
+    /* Biomarkers */
+    .bio-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .bio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .bio-card {
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      background: #020617;
+      padding: 10px 11px 11px;
+      font-size: 13px;
+    }
+
+    .bio-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .bio-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .bio-meta span {
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .bio-body {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .count {
+      display: inline-block;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-title">KICK DEATH</div>
+      <div class="nav-pill">
+        <div class="dot"></div>
+        <span id="nav-label">Phase 1 • Wake Up</span>
+      </div>
+      <div class="nav-steps">
+        <div class="nav-step active" data-step="1"></div>
+        <div class="nav-step" data-step="2"></div>
+        <div class="nav-step" data-step="3"></div>
+      </div>
+    </header>
+
+    <!-- HERO / PAGE 1 -->
+    <section id="top" class="fade-in">
+      <div class="hero">
+        <div class="hero-main">
+          <div class="hero-tag">
+            <span class="dot"></span>
+            <span>Not your doctor’s longevity advice</span>
+          </div>
+          <h1 class="hero-headline">
+            You are about to<br />
+            <span class="hero-highlight">kick death in the nuts.</span>
+          </h1>
+          <p class="hero-sub">
+            No woo. No monk lifestyle. Just a few habits that add serious
+            <strong>years of high‑test life</strong> without turning you into a
+            salad‑eating monk.
+          </p>
+
+          <div class="hero-cta-row">
+            <button class="btn btn-primary" onclick="scrollToId('overview')">
+              Show me the cheat codes →
+            </button>
+            <button class="btn btn-ghost" onclick="scrollToId('core')">
+              I want the full playbook
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-label">Extra life on the table</div>
+              <div class="stat-value">
+                <span class="count" data-target="10">0</span>
+                <span class="stat-unit">+ years</span>
+              </div>
+              <div class="stat-tag">Stacking just 3 habits</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Biggest lever</div>
+              <div class="stat-value">
+                <span class="count" data-target="30">0</span>
+                <span class="stat-unit">% ↓</span>
+              </div>
+              <div class="stat-tag">Heart‑attack risk with smart diet</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Time required</div>
+              <div class="stat-value">
+                <span class="count" data-target="5">0</span>
+                <span class="stat-unit">hrs / wk</span>
+              </div>
+              <div class="stat-tag">To run this whole system</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://source.unsplash.com/featured/800x900/?man,trail,fitness" alt="Strong man running on a trail at sunrise" />
+          <div class="hero-image-badge">
+            <span>Most guys coast to the grave.</span> You’re not most guys.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW STATS (PAGE 1) -->
+    <section id="overview" class="fade-in">
+      <div class="section-label">Page 1 • Reality check</div>
+      <h2 class="section-title">The 80/20 of not falling apart early</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">
+        The science is boring. The punchline isn’t. Here’s what actually moves the
+        needle for men: how you eat, how hard you move, and how much garbage you
+        keep out of your body.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <div class="pill">Food</div>
+            <div class="badge">+3–7 years</div>
+          </div>
+          <div class="card-title">Mediterranean‑plus</div>
+          <div class="card-body">
+            Real food, olive oil, fish, plants, low junk. That alone can slash
+            heart‑attack risk by ~30% and keep your arteries younger longer.
+          </div>
+          <div class="bar-chart">
+            <div class="bar-track">
+              <div class="bar-fill" data-bar="80"></div>
+            </div>
+          </div>
+          <div class="bar-num">Impact vs effort: 8/10</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="pill">Muscle & cardio</div>
+            <div class="badge">+3–5 years</div>
+          </div>
+          <div class="card-title">Heavy lifting + Zone 2</div>
+          <div class="card-body">
+            Strong legs and decent lungs lower death risk more than any fancy
+            supplement. Think “can sprint for the train” at 70.
+          </div>
+          <div class="bar-chart">
+            <div class="bar-track">
+              <div class="bar-fill" data-bar="90"></div>
+            </div>
+          </div>
+          <div class="bar-num">Impact vs effort: 9/10</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="pill">Heat & toxins</div>
+            <div class="badge">+1–3 years</div>
+          </div>
+          <div class="card-title">Sauna + less crap</div>
+          <div class="card-body">
+            Regular sauna users have much lower heart‑death rates. Add in fewer
+            seed oils, plastics, and pesticides, and your cells breathe easier.
+          </div>
+          <div class="bar-chart">
+            <div class="bar-track">
+              <div class="bar-fill" data-bar="70"></div>
+            </div>
+          </div>
+          <div class="bar-num">Impact vs effort: 7/10</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div class="card-header">
+          <div class="pill">The simple stack</div>
+          <div class="badge">Minimal BS</div>
+        </div>
+        <div class="card-title">Supplements that aren’t a scam</div>
+        <div class="card-body">
+          <strong>Creatine, magnesium, vitamin D3/K2, omega‑3s, GlyNAC, urolithin A.</strong>
+          These actually move muscle, energy, and inflammation in human studies.
+          Not magic. Just force multipliers for the habits above.
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE BREAKDOWN (PAGES 2–3) -->
+    <section id="core" class="fade-in">
+      <div class="section-label">Pages 2–3 • The core levers</div>
+      <h2 class="section-title">Your body is a machine. Here’s the maintenance schedule.</h2>
+
+      <!-- Diet card -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="pill">Dial 1 • Food</div>
+            <div class="card-title">Mediterranean‑plus, not rabbit food</div>
+          </div>
+          <div class="badge">Daily baseline</div>
+        </div>
+        <div class="card-body">
+          <strong>What it is:</strong> Real food: meat, fish, eggs, a stupid amount of
+          plants, olive oil, nuts. Almost no ultra‑processed garbage or seed oil
+          sludge. You eat like a 90‑year‑old Greek grandpa who still chops wood.
+          <br /><br />
+          <strong>Why it matters:</strong> It keeps your blood vessels slick, your
+          blood sugar steady, and your cell “engines” from choking on junk.
+        </div>
+        <div class="h-stack">
+          <span class="tag-pill">+3–7 extra years on average</span>
+          <span class="tag-pill">Keeps heart & brain online</span>
+          <span class="tag-pill">Kills cravings over time</span>
+        </div>
+        <p class="one-step">
+          One step this week: <strong>Replace every seed‑oil fried thing</strong> with
+          something cooked in butter, tallow, or olive oil. That alone is a big win.
+        </p>
+      </div>
+
+      <!-- Fasting card -->
+      <div class="card" style="margin-top:14px;">
+        <div class="card-header">
+          <div>
+            <div class="pill">Dial 2 • Timing</div>
+            <div class="card-title">Time‑restricted eating & FMD</div>
+          </div>
+          <div class="badge">Use in cycles</div>
+        </div>
+        <div class="card-body">
+          <strong>What it is:</strong> Eat inside a 10–12 hour daytime window most
+          days. A few times a year, run a 5‑day “fast‑mimic” phase with low calories
+          and low protein.
+          <br /><br />
+          <strong>Why it matters:</strong> This flips your cells from “always in
+          storage mode” to “clean out the junk mode” — burning dead weight,
+          repairing damage, and rebooting your mitochondria.
+        </div>
+        <div class="h-stack">
+          <span class="tag-pill">Better blood sugar</span>
+          <span class="tag-pill">Less belly fat</span>
+          <span class="tag-pill">Cell “spring cleaning”</span>
+        </div>
+        <p class="one-step">
+          One step this week: <strong>Stop eating 3 hours before bed.</strong> Same
+          calories, just earlier. Sleep, gut, and waistline all win.
+        </p>
+      </div>
+
+      <!-- Training card -->
+      <div class="card" style="margin-top:14px;">
+        <div class="card-header">
+          <div>
+            <div class="pill">Dial 3 • Training</div>
+            <div class="card-title">Heavy lifting + Zone 2 cardio</div>
+          </div>
+          <div class="badge">Non‑negotiable</div>
+        </div>
+        <div class="card-body">
+          <strong>What it is:</strong> You keep enough muscle to pick up heavy
+          things and enough cardio to not wheeze on stairs.
+          <br /><br />
+          <strong>Why it matters:</strong> Leg strength and VO₂max are two of the
+          cleanest “how long you live” signals we have. Frail guys die early.
+        </div>
+        <div class="h-stack">
+          <span class="tag-pill">2–3 lift days / week</span>
+          <span class="tag-pill">3–4 Zone 2 sessions</span>
+          <span class="tag-pill">1 hard interval day</span>
+        </div>
+        <p class="one-step">
+          One step this week: <strong>Pick 2 full‑body lift days</strong> and treat
+          them like meetings you can’t cancel.
+        </p>
+      </div>
+
+      <!-- Sauna / heat -->
+      <div class="card" style="margin-top:14px;">
+        <div class="card-header">
+          <div>
+            <div class="pill">Dial 4 • Heat</div>
+            <div class="card-title">Sauna: fake cardio, real results</div>
+          </div>
+          <div class="badge">2–4x per week</div>
+        </div>
+        <div class="card-body">
+          <strong>What it is:</strong> 15–20 minutes in a hot box, heart pounding,
+          followed by a cool shower. Repeat.
+          <br /><br />
+          <strong>Why it matters:</strong> Men who sauna several times a week have
+          way fewer fatal heart events. Heat stress trains your vessels, triggers
+          repair proteins, and helps sweat out some of the chemical soup we all
+          marinate in.
+        </div>
+        <div class="h-stack">
+          <span class="tag-pill">Heart & brain insurance</span>
+          <span class="tag-pill">Better recovery</span>
+          <span class="tag-pill">Helps clear toxins</span>
+        </div>
+        <p class="one-step">
+          One step this week: <strong>Hit a sauna twice</strong> (gym, spa, or
+          friend’s setup). Start with 10 minutes and build up.
+        </p>
+      </div>
+
+      <!-- Simple comparison: Standard vs Longevity -->
+      <div class="compare" style="margin-top:16px;">
+        <div class="compare-row header">
+          <div>Levers</div>
+          <div>Standard guy</div>
+          <div>Longevity guy</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Breakfast</div>
+          <div class="compare-bad">Energy drink + pastry</div>
+          <div class="compare-good">Eggs, berries, coffee</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Movement</div>
+          <div class="compare-bad">5k steps, no lifting</div>
+          <div class="compare-good">10k steps + 2 heavy days</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Cooking fat</div>
+          <div class="compare-bad">Random seed oils</div>
+          <div class="compare-good">Olive oil, butter, tallow</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Heat</div>
+          <div class="compare-bad">Sweats only under stress</div>
+          <div class="compare-good">Sauna 2–4x weekly</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEEPER DETAIL (PAGES 3–5) -->
+    <section id="deep" class="fade-in">
+      <div class="section-label">Pages 3–5 • For the nerd who still wants to live</div>
+      <h2 class="section-title">What’s under the hood (without the biochem lecture)</h2>
+
+      <!-- Accordion: Supplements -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span>Supplement stack that actually does something</span><br />
+              <small>Use these as tools, not religion</small>
+            </div>
+            <div class="chevron"></div>
+          </div>
+          <div class="accordion-body">
+            <p><strong>Tier 1 — boring but effective:</strong></p>
+            <ul>
+              <li><strong>Creatine (3–5 g/day):</strong> Extra fuel tank for your muscles and brain. Helps you build and keep muscle, which keeps you alive and moving.</li>
+              <li><strong>Magnesium (~300–400 mg/day):</strong> Runs hundreds of reactions in your body, including energy production and blood sugar control. Most guys are low.</li>
+              <li><strong>Vitamin D3 + K2:</strong> D3 acts like a hormone for immunity and energy; K2 keeps calcium out of your arteries and in your bones.</li>
+              <li><strong>Omega‑3 (1–2 g EPA/DHA/day):</strong> Greases your brain and heart, calms inflammation, and keeps cell membranes flexible instead of brittle.</li>
+              <li><strong>GlyNAC (3–5 g each glycine + NAC):</strong> Rebuilds glutathione, your body’s main internal “clean‑up crew” for oxidative damage.</li>
+              <li><strong>Urolithin A (500–1000 mg/day):</strong> Tells your cells to take out the mitochondrial trash so the ones left run hotter and cleaner.</li>
+            </ul>
+            <p style="margin-top:8px;"><strong>Tier 2 — interesting, more experimental:</strong></p>
+            <ul>
+              <li><strong>Ca‑AKG (~1–4 g/day):</strong> Fuel for your cell engines that also nudges your age “software” in a younger direction.</li>
+              <li><strong>Taurine (1–3+ g/day):</strong> Helps your heart, muscles, and mitochondria handle stress. Levels drop hard as you age.</li>
+              <li><strong>Spermidine (1–4 mg/day):</strong> From things like natto and aged cheese. Helps cells recycle junk protein instead of letting it pile up.</li>
+              <li><strong>Ubiquinol (100–200 mg/day):</strong> CoQ10’s upgraded form. Extra support for heart and energy, especially if you’re on statins.</li>
+            </ul>
+            <p style="margin-top:8px;">
+              Resveratrol and over‑hyped NAD boosters (NMN/NR) are <strong>not</strong> on the A‑team yet. The marketing is shredded; the human results are not.
+            </p>
+          </div>
+        </div>
+
+        <!-- Toxins -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span>The invisible crap trying to age you</span><br />
+              <small>Seed oils, plastics, and other nonsense</small>
+            </div>
+            <div class="chevron"></div>
+          </div>
+          <div class="accordion-body">
+            <p>
+              You’re not just fighting time. You’re fighting a constant drizzle of
+              chemicals, bad fats, and microplastics that gum up your cells.
+            </p>
+            <ul>
+              <li><strong>Ultra‑processed food & seed oils:</strong> Pump your blood full of unstable fats that crack and burn out your mitochondria.</li>
+              <li><strong>Pesticides & plastics:</strong> Act like fake hormones, confuse your metabolism, and wreck testosterone and thyroid over time.</li>
+              <li><strong>Heavy metals & air crap:</strong> Add friction to everything from heart function to brain clarity.</li>
+            </ul>
+            <p style="margin-top:8px;"><strong>Simple fixes:</strong></p>
+            <ul>
+              <li>Cook most of your food at home in a real fat (olive oil, butter, tallow).</li>
+              <li>Use a decent water filter and don’t microwave food in plastic.</li>
+              <li>Rotate sauna + sweating, and make sure you poop daily. That’s your exit lane for a lot of this junk.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sleep / Circadian -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div>
+              <span>Sleep & light: the “stealth steroid cycle”</span><br />
+              <small>How not to sabotage the rest</small>
+            </div>
+            <div class="chevron"></div>
+          </div>
+          <div class="accordion-body">
+            <p>
+              Lifting, diet, supplements — all of it bleeds out if your sleep and light
+              exposure are trash.
+            </p>
+            <ul>
+              <li><strong>Morning light:</strong> 10–20 minutes outside within an hour of waking tells your brain “daytime,” sets your clock, and sets up good melatonin later.</li>
+              <li><strong>Night light:</strong> Bright screens and overhead LEDs at midnight tell your brain “we’re still hunting mammoths,” not “time to repair.”</li>
+              <li><strong>Sleep window:</strong> 7–9 hours. Aim for roughly the same bed/wake times most days. Boring. Effective.</li>
+            </ul>
+            <p style="margin-top:8px;">
+              You don’t need perfection. You just need to stop acting like jet lag is a
+              lifestyle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIOMARKER TRACKING -->
+    <section id="labs" class="fade-in">
+      <div class="section-label">Bonus • How to know it’s working</div>
+      <h2 class="section-title">Numbers that actually matter (and what to do with them)</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">
+        If you’re going to lift, sauna, and swallow capsules, you might as well check if
+        you’re winning. These tests are the scoreboard.
+      </p>
+
+      <div class="bio-grid">
+        <div class="bio-card">
+          <div class="bio-title">Fasting glucose + insulin (HOMA‑IR)</div>
+          <div class="bio-meta">
+            <span>Every 3–6 months</span>
+            <span>~$20–40</span>
+          </div>
+          <div class="bio-body">
+            Tells you how hard your body has to work to handle carbs. Lower is better.
+            Tracks: food quality, time‑restricted eating, lifting, weight loss, and
+            supplements like GlyNAC.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">Lipids & ApoB</div>
+          <div class="bio-meta">
+            <span>Every 6–12 months</span>
+            <span>~$30–80</span>
+          </div>
+          <div class="bio-body">
+            Shows how many “bullet” particles are hitting your artery walls. Tracks:
+            Mediterranean‑plus diet, omega‑3s, less junk fat, more movement.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">hs‑CRP (inflammation)</div>
+          <div class="bio-meta">
+            <span>Every 3–6 months</span>
+            <span>~$20–60</span>
+          </div>
+          <div class="bio-body">
+            If this is chronically high, your body is in a low‑grade fight. Tracks: diet
+            cleanup, less seed oil, GlyNAC, sauna, stress management.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">25‑OH Vitamin D</div>
+          <div class="bio-meta">
+            <span>1–2x / year</span>
+            <span>~$40–70</span>
+          </div>
+          <div class="bio-body">
+            Shows if your D3/K2 strategy + sun are on point. Aim for solid mid‑range
+            levels, not “blast to the moon.”
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">CBC, ferritin, basic metabolic panel</div>
+          <div class="bio-meta">
+            <span>Yearly</span>
+            <span>~$30–60</span>
+          </div>
+          <div class="bio-body">
+            The “engine warning lights.” Anemia, liver strain, kidney issues, iron
+            overload — you want to catch these early while you can still fix them.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">VO₂max + strength tests</div>
+          <div class="bio-meta">
+            <span>VO₂max yearly</span>
+            <span>Strength every 3–6 months</span>
+          </div>
+          <div class="bio-body">
+            This is your real‑world death odds in disguise. Higher VO₂max and stronger
+            grip/legs = lower risk. Tracks: your training, not your genetics.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">DEXA (muscle & fat)</div>
+          <div class="bio-meta">
+            <span>Every 6–12 months</span>
+            <span>~$75–150</span>
+          </div>
+          <div class="bio-body">
+            Shows if you’re trading fat for muscle, or just getting smaller and softer.
+            The goal: more lean mass, less visceral fat.
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-title">Biological age test (epigenetic clock)</div>
+          <div class="bio-meta">
+            <span>Every 12–18 months</span>
+            <span>~$200–400</span>
+          </div>
+          <div class="bio-body">
+            Measures how “old” your system looks on paper. Cool, not perfect. Use it as
+            a long‑view trend, not a daily horoscope. Biggest movers: diet, training,
+            sleep, and stress.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in" id="cta">
+      <div class="section-label">Final punchline</div>
+      <h2 class="section-title">You don’t need to be perfect. You just need to stop being easy to kill.</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">
+        Pick <strong>one lever for food, one for training, one for heat, one or two
+        smart supplements, and one lab to track</strong>. Run it for 90 days. Then
+        check the scoreboard. Adjust. Repeat.
+      </p>
+      <button class="btn btn-primary" onclick="scrollToId('top')">
+        Back to the top — and into the fight ↑
+      </button>
+    </section>
+
+    <footer class="footer">
+      This is not medical advice. It’s “stop dying early” advice. Show this to your
+      doctor if you’re on meds or have health issues.
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll helper
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fade-in on scroll + bar animations + nav steps + counts
+    const observerOptions = {
+      threshold: 0.2
+    };
+
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const bars = document.querySelectorAll('.bar-fill');
+    const counts = document.querySelectorAll('.count');
+    const navLabel = document.getElementById('nav-label');
+    const navSteps = document.querySelectorAll('.nav-step');
+
+    let counted = false;
+
+    const sectionMap = [
+      { id: 'top', label: 'Phase 1 • Wake Up', step: 1 },
+      { id: 'core', label: 'Phase 2 • Build The Engine', step: 2 },
+      { id: 'labs', label: 'Phase 3 • Check The Scoreboard', step: 3 }
+    ];
+
+    function updateNav() {
+      const scroll = window.scrollY;
+      let current = sectionMap[0];
+      for (const item of sectionMap) {
+        const el = document.getElementById(item.id);
+        if (!el) continue;
+        const offsetTop = el.offsetTop - 120;
+        if (scroll >= offsetTop) current = item;
+      }
+      navLabel.textContent = current.label;
+      navSteps.forEach(stepEl => {
+        const s = Number(stepEl.getAttribute('data-step'));
+        if (s === current.step) stepEl.classList.add('active');
+        else stepEl.classList.remove('active');
+      });
+    }
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+
+          if (!counted && entry.target.id === 'overview') {
+            counted = true;
+            counts.forEach(el => animateCount(el));
+            bars.forEach(bar => {
+              const target = Number(bar.getAttribute('data-bar')) || 0;
+              bar.style.transform = 'scaleX(' + (target / 100) + ')';
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    fadeEls.forEach(el => fadeObserver.observe(el));
+
+    function animateCount(el) {
+      const target = Number(el.getAttribute('data-target')) || 0;
+      const duration = 800;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(progress * target);
+        el.textContent = value;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Accordion toggle
+    function toggleAccordion(headerEl) {
+      const body = headerEl.nextElementSibling;
+      const chev = headerEl.querySelector('.chevron');
+      const isOpen = body.classList.contains('open');
+      const allBodies = document.querySelectorAll('.accordion-body');
+      const allChevs = document.querySelectorAll('.chevron');
+
+      allBodies.forEach(b => {
+        b.classList.remove('open');
+        b.style.maxHeight = null;
+      });
+      allChevs.forEach(c => c.classList.remove('open'));
+
+      if (!isOpen) {
+        body.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        chev.classList.add('open');
+      }
+    }
+
+    // Update nav on scroll
+    window.addEventListener('scroll', () => {
+      updateNav();
+    });
+
+    // Initial setup
+    window.addEventListener('load', () => {
+      updateNav();
+    });
+  </script>
+</body>
+</html>
